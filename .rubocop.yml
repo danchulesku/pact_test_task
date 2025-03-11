@@ -1,6 +1,8 @@
 AllCops:
   Exclude:
     - 'bin/**'
+    - 'db/**'
+    - 'db/migrate/**'
 
 Style/Documentation:
   Enabled: false

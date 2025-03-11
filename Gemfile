@@ -10,6 +10,7 @@ gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.5', '>= 7.1.5.1'
 
 group :development, :test do
+  gem 'byebug'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
 end
