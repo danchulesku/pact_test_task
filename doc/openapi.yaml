@@ -1,0 +1,129 @@
+---
+openapi: 3.0.3
+info:
+  title: pact_test_project
+  version: 1.0.0
+servers: []
+paths:
+  "/users":
+    post:
+      summary: create
+      tags:
+      - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      nullable: true
+                    patronymic:
+                      type: string
+                    email:
+                      type: string
+                    nationality:
+                      type: string
+                    country:
+                      type: string
+                    gender:
+                      type: string
+                    surname:
+                      type: string
+                    age:
+                      type: integer
+                    interests:
+                      type: array
+                      items:
+                        type: string
+                    skills:
+                      type: array
+                      items:
+                        type: string
+            example:
+              data:
+                name:
+                patronymic: Galt
+                email: test@email.com
+                nationality: american
+                country: usa
+                gender: male
+                surname: ''
+                age: 30
+                interests:
+                - money
+                - cars
+                skills:
+                - work
+                - driving
+      responses:
+        '201':
+          description: returns response with 201 status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      surname:
+                        type: string
+                      full_name:
+                        type: string
+                      patronymic:
+                        type: string
+                      email:
+                        type: string
+                      age:
+                        type: integer
+                      nationality:
+                        type: string
+                      country:
+                        type: string
+                      gender:
+                        type: string
+                      created_at:
+                        type: string
+                      updated_at:
+                        type: string
+              example:
+                user:
+                  id: 228
+                  name: John
+                  surname: ''
+                  full_name: John Galt
+                  patronymic: Galt
+                  email: test@email.com
+                  age: 30
+                  nationality: american
+                  country: usa
+                  gender: male
+                  created_at: '2025-03-12T11:59:55.022Z'
+                  updated_at: '2025-03-12T11:59:55.022Z'
+        '422':
+          description: returns response with 422 status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      name:
+                        type: array
+                        items:
+                          type: string
+              example:
+                errors:
+                  name:
+                  - is required
