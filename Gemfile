@@ -15,8 +15,6 @@ group :development, :test do
   gem 'rubocop-rspec'
 end
 
-gem 'brakeman', group: :development
-
 group :test do
   gem 'factory_bot_rails'
   gem 'rspec-openapi', '0.7.2', git: 'https://github.com/exoego/rspec-openapi',
