@@ -15,12 +15,9 @@ group :development, :test do
   gem 'rubocop-rspec'
 end
 
-group :development do
-  gem 'brakeman'
-end
+gem 'brakeman', group: :development
 
 group :test do
-  gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
   gem 'rspec-openapi', '0.7.2', git: 'https://github.com/exoego/rspec-openapi',
                                 ref: '375aed5d0baac2b7a9071c45a007883d30b58732'
