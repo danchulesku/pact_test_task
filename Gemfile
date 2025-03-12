@@ -25,4 +25,5 @@ group :test do
   gem 'rspec-openapi', '0.7.2', git: 'https://github.com/exoego/rspec-openapi',
                                 ref: '375aed5d0baac2b7a9071c45a007883d30b58732'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
